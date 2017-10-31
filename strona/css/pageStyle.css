@@ -1,0 +1,66 @@
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        @media (min-width: 1200px){
+        
+        #form{
+            background-color: @gray-ligth;
+            color: black;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-color: purple;
+            border-width: 15px;
+
+        }
+
+        
+        body{
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: normal;
+            letter-spacing: normal;
+            background-color:  #ffffe6;
+            color: black;
+        }
+       
+        .starter-template{
+            
+            width:1000px;
+            padding:40px;
+            margin:0 auto;
+           
+       
+        }
+       
+        .head{
+            font-family:Helvetica,Arial,Verdana;
+            text-transform:uppercase;
+            font-weight:bold;
+            font-size:12px;
+            font-style:normal;
+            letter-spacing:3px;
+            color:#888;
+            border-bottom:3px solid #ff4d4d;
+            padding-bottom:10px;
+            margin-bottom:10px;
+            border-bottom-color: #1D81B6;
+        }
+      
+       #internal{
+            margin-bottom: 15px;
+        }
+        #selectHelp{
+            font-style: italic;
+            font-size: small;
+        }
+      form{
+          border-left: 20px;
+          border-left-color: black;
+      }
+       
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+    <title>Project Planner</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/pageStyle.css" />
+    <link rel="stylesheet" href="datepicker/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/pageStyle.css" />
+
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="datepicker/js/bootstrap-datepicker.min.js"></script>
+
+
+
+</head>
+
+<body onload="setDate()">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HoursByDay</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">Activity</a></li>
+                    <li><a href="#contact">Reports</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="tab-content">
+        ::before
+
+        <div class="content">
+            <br>
+            <br>
+            <div class="myForm">
+                <form class="form" id="form">
+                    <div class=" container">
+
+                        <div class="row" id="internal">
+                            <label class="col-md-4 control-label"> Date: </label>
+                            <div class="row">
+                                <div class='col-md-6'>
+                                    <div class="form-group">
+
+                                        <div class='input-group date' id='datetimepicker2'>
+                                            <input type='text' class="form-control" id="datepicker" />
+                                            <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar" id="datetimepicker2"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row" id="external">
+                            <label class="col-md-4 control-label" for="projectSelect"> Project: </label>
+
+                            <div class="row" id="internal">
+                                <div class="col-md-6">
+                                    <select class="col-md-6 form-control" id="projectSelect" style="max-width=80%">
+                                    <option> Project 1 </option>
+                                    <option> Project 2 </option>
+                                    <option> Project 3 </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center">
+                            <label class="col-md-4 control-label" for="subjectSelect"> Subject: </label>
+                            <div class="row" id="internal">
+                                <div class="col-md-6">
+
+
+                                    <select class="form-control" id="subjectSelect">
+                                       <option> Subject 1 </option>
+                                       <option> Subject 2 </option>
+                                       <option> Subject 3 </option>
+                                   </select>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row " id="external">
+                            <label class="col-md-4 control-label " for="timeSelect"> Working hours: </label>
+                            <div class="row" id="internal">
+
+
+                                <div class="col-md-6">
+
+                                    <select class="form-control " id="timeSelect ">
+                                        <option id="selectOption" > -- select an option -- </option>
+                                       <option id="fullTime " value="8 " onclick="chooseTimeWrittenBlock()"> Full Time (8 hour) </option>
+                                       <option id="partTime " value="4 " onclick="chooseTimeWrittenBlock()"> Part Time (4 hour) </option>
+                                       <option id="quoterTime " value="2 " onclick="chooseTimeWrittenBlock()"> Quoter Time (2 hour) </option>
+                                       
+                                   </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="internal">
+                                <div class="col-md-4">
+                                </div>
+                                <div class="justify-content-center col-md-6">
+                                    <small id="selectAlternativeTime" class="form-text text-muted">Choose your working hour ( above) or write your time (below)</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="row" id="internal">
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control bfh-number " data-min="0" data-max="12" id="workerWrittenTime" placeholder=" Write your time e.g = 5"
+                                        onclick="writtenTimeSelectBlock()" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row justify-content-center ">
+                            <div class="col-md-2">
+                                <button class="btn btn-primary " type="submit " value="Submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script type="text/javascript " src="js/script.js "> </script>
+            <script src="http://code.jquery.com/jquery-2.1.1.min.js "></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa "
+                crossorigin="anonymous "></script>
+</body>
+
+</html>

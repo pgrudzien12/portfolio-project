@@ -29,6 +29,7 @@
 
 
 
+
 </head>
 
 <body onload="setDate()">
@@ -110,7 +111,7 @@
 
 
                                     <select class="form-control" id="subjectSelect">
-                                       <option> Subject 1 </option>
+                                       <option id="s1"> Subject 1 </option>
                                        <option> Subject 2 </option>
                                        <option> Subject 3 </option>
                                    </select>
@@ -128,11 +129,11 @@
 
                                 <div class="col-md-6">
 
-                                    <select class="form-control " id="timeSelect ">
-                                        <option id="selectOption" > -- select an option -- </option>
-                                       <option id="fullTime " value="8 " onclick="chooseTimeWrittenBlock()"> Full Time (8 hour) </option>
-                                       <option id="partTime " value="4 " onclick="chooseTimeWrittenBlock()"> Part Time (4 hour) </option>
-                                       <option id="quoterTime " value="2 " onclick="chooseTimeWrittenBlock()"> Quoter Time (2 hour) </option>
+                                    <select class="form-control " id="timeSelect" name="selectTime" >
+                                        <option id="selectOption"  > -- select an option -- </option>
+                                       <option id="fullTime " value="8 " name="selectOptionTIme" onclick="chooseTimeWrittenBlock()"> Full Time (8 hour) </option>
+                                       <option id="partTime " value="4 " name="selectOptionTIme" onclick="chooseTimeWrittenBlock()"> Part Time (4 hour) </option>
+                                       <option id="quoterTime " value="2 "  name="selectOptionTIme" onclick="chooseTimeWrittenBlock()"> Quoter Time (2 hour) </option>
                                        
                                    </select>
                                 </div>
@@ -152,8 +153,8 @@
                             <div class="row" id="internal">
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control bfh-number " data-min="0" data-max="12" id="workerWrittenTime" placeholder=" Write your time e.g = 5"
-                                        onclick="writtenTimeSelectBlock()" />
+                                    <input type="text" class="form-control " data-min="0" data-max="12" id="workerWrittenTime" placeholder=" Write your time e.g = 5"
+                                        onclick="writtenTimeSelectBlock()" name="selectTime" />
                                 </div>
 
                             </div>
@@ -171,6 +172,9 @@
                 </form>
 
             </div>
+        </div>
+        
+            
 
 
 

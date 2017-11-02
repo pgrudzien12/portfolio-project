@@ -36,18 +36,19 @@ $('#datetimepicker2').datepicker({
 
 //blocking input worker time input when option were selected
 function chooseTimeWrittenBlock() {
-    var workerTime = document.getElementById('workerWrittenTime');
-    //var select = document.getElementById("timeSelect");
-workerTime.disabled=true;
-   // workerTime.disabled = true;
-    
-     ////   if (document.getElementById("selectOption").click = true) {
+  var workerTime = document.getElementById('workerWrittenTime');
+  
+    workerTime.disabled=true;  
+   } 
+ // 
+
+$("#timeSelect").change(function(){
+        document.getElementById('workerWrittenTime').disabled=false;
+    })
 
 
-          //  workerTime.disabled = false;
-        
-   // }
-}
+
+
 
 
     function writtenTimeSelectBlock() {
@@ -58,5 +59,7 @@ workerTime.disabled=true;
             }
        }
    // }
-
+$( "#target" ).change(function() {
+  alert( "Handler for .change() called." );
+});
 
